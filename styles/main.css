@@ -1,0 +1,225 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* NAV */
+.header {
+  border-bottom: 1px solid #1e293b;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  gap: 1rem;
+}
+
+/* LOGO */
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.logo-j {
+  color: #3b82f6;
+}
+
+.logo-l {
+  color: #60a5fa;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #94a3b8;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.hero h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.hero p {
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  color: #94a3b8;
+}
+
+/* BOTÕES */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  border: 1px solid #334155;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.btn.primary {
+  background: #3b82f6;
+  border: none;
+}
+
+/* SEÇÕES */
+.section {
+  padding: 3rem 0;
+}
+
+.section h2 {
+  margin-bottom: 2rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+
+/* TEXTO INTERNO (resolve espaçamento lateral) */
+.section p {
+  max-width: 700px;
+  margin-bottom: 1rem;
+}
+
+.alt {
+  background: #020617;
+}
+
+/* PROJETOS */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #1e293b;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #3b82f6;
+}
+
+.stack {
+  display: block;
+  margin: 1rem 0;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.link {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+/* PLACEHOLDER PROJETOS */
+.placeholder {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* CONTATO */
+.contato-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contato-links a {
+  text-decoration: none;
+  color: #3b82f6;
+  transition: 0.2s;
+}
+
+.contato-links a:hover {
+  color: #fff;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #1e293b;
+  color: #64748b;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .hero {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .contato-links {
+    flex-direction: column;
+  }
+}
