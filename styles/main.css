@@ -56,7 +56,6 @@ main {
 .logo-j {
   color: #3b82f6;
 }
-
 .logo-l {
   color: #7c3aed;
 }
@@ -98,7 +97,9 @@ main {
   height: 2px;
   background: #e2e8f0;
   border-radius: 2px;
-  transition: 0.25s;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 /* HERO */
@@ -160,13 +161,18 @@ main {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 0.88rem;
   font-weight: 500;
-  transition: 0.2s;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .btn:hover {
   transform: translateY(-2px);
   border-color: #3b82f6;
   color: #fff;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
 }
 
 .btn.primary {
@@ -178,6 +184,7 @@ main {
 .btn.primary:hover {
   background: #2563eb;
   border-color: #2563eb;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
 }
 
 /* SEÇÕES */
@@ -211,28 +218,103 @@ main {
   justify-content: center;
 }
 
+/* CARD BASE */
 .card {
   background: #111827;
   border: 1px solid #1e293b;
   padding: 1.5rem;
   border-radius: 10px;
-  transition: 0.25s;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  border-color: #3b82f6;
-  background: #131e2e;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
-.card h3 {
+/* CARD EM CONSTRUÇÃO */
+.card-wip {
+  opacity: 0.7;
+}
+
+.card-wip:hover {
+  border-color: #334155;
+  background: #111827;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* CARD DESTAQUE */
+.card-featured {
+  border-color: #1d3557;
+  background: #0f1e35;
+  box-shadow:
+    0 2px 8px rgba(59, 130, 246, 0.08),
+    inset 0 0 0 1px rgba(59, 130, 246, 0.08);
+}
+
+.card-featured:hover {
+  border-color: #3b82f6;
+  background: #101f38;
+  box-shadow:
+    0 12px 36px rgba(59, 130, 246, 0.18),
+    inset 0 0 0 1px rgba(59, 130, 246, 0.15);
+}
+
+/* CARD TOP (título + badge) */
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.card-top h3 {
   font-size: 0.95rem;
   font-weight: 600;
   color: #e2e8f0;
   line-height: 1.4;
+}
+
+/* BADGES */
+.badge {
+  flex-shrink: 0;
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.badge-soon {
+  background: rgba(100, 116, 139, 0.15);
+  border: 1px solid #334155;
+  color: #64748b;
+}
+
+.badge-client {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+}
+
+/* IMPACTO */
+.card-impact {
+  font-size: 0.8rem !important;
+  color: #60a5fa !important;
+  font-weight: 500;
+  margin: 0 !important;
 }
 
 .card p {
@@ -334,12 +416,16 @@ main {
   font-size: 0.88rem;
   font-weight: 500;
   cursor: pointer;
-  transition: 0.2s;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
 }
 
 .btn-copy-email:hover {
   border-color: #3b82f6;
   color: #fff;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.12);
 }
 
 .btn-send-email {
@@ -363,11 +449,11 @@ main {
   font-size: 0.82rem;
 }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVO                                            */
 
 @media (max-width: 900px) {
   .hero {
-    padding: 4rem 0 3rem;
+    padding: 3.5rem 0 2.5rem;
   }
 
   .projetos-grid {
@@ -389,13 +475,21 @@ main {
     right: 0;
     background: #0b1120;
     border-top: 1px solid #1e293b;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    display: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    max-height: 0;
+    transition:
+      max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
     z-index: 9;
   }
 
   nav.open {
-    display: block;
+    max-height: 300px;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav-links {
@@ -408,11 +502,18 @@ main {
     display: block;
     padding: 0.75rem 1.25rem;
     font-size: 0.95rem;
+    transition:
+      background 0.2s,
+      color 0.2s;
   }
 
   .nav-links li a:hover {
     background: #111827;
     color: #fff;
+  }
+
+  .hero {
+    padding: 2.5rem 0 2rem;
   }
 
   .hero::before {
