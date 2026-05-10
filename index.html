@@ -4,9 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>João Lucas Lanes | Desenvolvedor Front-end</title>
+  <title>João Lucas Lanes | Web Developer</title>
   <meta name="description"
-    content="Desenvolvedor front-end com foco em interfaces reais e aplicações práticas. HTML, CSS, JavaScript e estudos em React e Node.js.">
+    content="Web Developer com foco em interfaces responsivas e aplicações práticas. HTML, CSS, JavaScript, com estudos em React e Node.js.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles/main.css" />
 </head>
@@ -21,8 +25,14 @@
         <span class="logo-j">J</span><span class="logo-l">L</span>
       </h1>
 
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <nav>
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
           <li><a href="#inicio">Início</a></li>
           <li><a href="#projetos">Projetos</a></li>
           <li><a href="#sobre">Sobre</a></li>
@@ -38,11 +48,11 @@
 
     <section id="inicio" class="hero container">
       <h2>João Lucas Lanes</h2>
-      <p class="subtitle">Desenvolvedor Front-end</p>
+      <p class="subtitle">Web Developer</p>
 
       <p>
-        Desenvolvo interfaces responsivas e funcionais com HTML, CSS e JavaScript,
-        com foco em aplicações reais e código limpo. Atualmente expandindo conhecimento
+        Desenvolvo interfaces responsivas e aplicações web funcionais com HTML, CSS e JavaScript,
+        com foco em código limpo e soluções práticas. Atualmente expandindo conhecimento
         para React, Node.js e integração com APIs.
       </p>
 
@@ -60,23 +70,40 @@
         <div class="projetos-grid">
 
           <article class="card">
-            <h3>Sistema para Loja de Bilhares</h3>
+            <h3>Sistema de Gestão — Loja de Bilhares</h3>
             <p>
-              Sistema focado em vendas e locações, com geração de pedidos via WhatsApp
-              e organização do fluxo de atendimento.
+              Aplicação web para gestão de vendas e locações, com fluxo de atendimento
+              automatizado e geração de pedidos via WhatsApp.
             </p>
-            <span class="stack">HTML • CSS • JavaScript • Integração com WhatsApp</span>
-            <a href="#" class="link">Ver projeto →</a>
+            <div class="stack">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>WhatsApp API</span>
+            </div>
+            <div class="card-links">
+              <a href="#" class="link">Ver projeto →</a>
+              <a href="#" class="link">Repositório →</a>
+            </div>
           </article>
 
           <article class="card">
-            <h3>Landing Page para Odontologia</h3>
+            <h3>Mídia Kit — Lívia Freitas Moreira</h3>
             <p>
-              Página de posicionamento profissional com foco em conversão,
-              estruturação de conteúdo e presença digital.
+              Mídia kit digital para criadora de conteúdo, com apresentação de métricas
+              de audiência, trajetória profissional e seção de parcerias.
             </p>
-            <span class="stack">HTML • CSS • JavaScript • UI/UX</span>
-            <a href="#" class="link">Ver projeto →</a>
+            <div class="stack">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>UI Design (Figma)</span>
+            </div>
+            <div class="card-links">
+              <a href="https://liviafreitasmoreira.vercel.app/" target="_blank" class="link">Ver projeto →</a>
+              <a href="https://github.com/joaolucaslanes/media-kit-livia-moreira" target="_blank"
+                class="link">Repositório →</a>
+            </div>
           </article>
 
         </div>
@@ -89,19 +116,20 @@
         <h2>Sobre</h2>
 
         <p>
-          Desenvolvedor Front-end com base sólida em HTML e CSS e evolução contínua em JavaScript.
-          Tenho experiência na construção de interfaces responsivas e organizadas,
-          focadas em aplicações práticas.
+          Web Developer com base sólida em HTML, CSS e evolução contínua em JavaScript.
+          Experiência na construção de interfaces responsivas, organizadas e voltadas
+          para aplicações práticas e reais.
         </p>
 
         <p>
-          Atualmente estudando React, Node.js e conceitos de backend como APIs e integração de dados,
-          buscando ampliar minha capacidade de construir aplicações completas.
+          Atualmente aprofundando conhecimentos em React, Node.js e conceitos de backend
+          como APIs REST e integração de dados, com foco em ampliar a capacidade de
+          construir aplicações completas.
         </p>
 
         <p>
-          Cursando Análise e Desenvolvimento de Sistemas, conciliando teoria e prática
-          com desenvolvimento de projetos reais.
+          Cursando Análise e Desenvolvimento de Sistemas, conciliando formação acadêmica
+          com desenvolvimento de projetos reais para clientes.
         </p>
 
       </div>
@@ -118,12 +146,17 @@
           <a href="https://wa.me/5531996206657" target="_blank">WhatsApp</a>
         </div>
 
-        <p style="margin-top: 1rem;">
-          📧
-          <a href="mailto:lanesjoaolucas@gmail.com?subject=Contato via portfólio">
-            lanesjoaolucas@gmail.com
-          </a>
-        </p>
+        <div class="email-row">
+          <small class="email-hint">clique para copiar</small>
+          <div class="email-actions">
+            <button class="btn-copy-email" id="copy-email">
+              <span id="email-text">lanesjoaolucas@gmail.com</span>
+            </button>
+            <a href="mailto:lanesjoaolucas@gmail.com?subject=Contato via portfólio" class="btn-send-email">
+              Enviar e-mail ↗
+            </a>
+          </div>
+        </div>
 
       </div>
     </section>
